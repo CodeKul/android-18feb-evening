@@ -1,13 +1,19 @@
 package com.melayer.listinkotlin
 
-import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+    val technologies = arrayOf<String>("C","C++","Java",".Net","Kotlin","Ruby")
+
+    val techImages = arrayOf<Int>(
+            R.drawable.java,
+            R.drawable.java,
+            R.drawable.java,
+            R.drawable.java,
+            R.drawable.java,
+            R.drawable.java)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,14 +23,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun showList() {
 
-        val technologies = arrayOf("C", "Cpp", "Java", "Android", "HTML", "CSS", "JS", "AngularJs", "Hadoop", "C", "Cpp", "Java", "Android", "HTML", "CSS", "JS", "AngularJs", "Hadoop")
-        val adapter = ArrayAdapter(this, R.layout.single_technology, R.id.textView, technologies)
-        listOfTechnologies.adapter=adapter
+        val adapter_tech = TechnologyAdapter(this, technologies, techImages)
+        listOfTechnologies.adapter = adapter_tech
 
-        listOfTechnologies.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
-            // Toast.makeText(MainActivity.this, ""+position, Toast.LENGTH_SHORT).show();
-            startActivity(Intent(this@MainActivity, SecondActivity::class.java))
-        }
     }
 
 }

@@ -38,13 +38,14 @@ public class MainActivity extends AppCompatActivity {
                 "HTML",
                 "CSS","JS","AngularJs","Hadoop"};
 
+
+
         ArrayAdapter adapter=new ArrayAdapter(this,R.layout.single_technology,R.id.textView,technologies);
         listOfTechnologies.setAdapter(adapter);
 
         listOfTechnologies.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-               // Toast.makeText(MainActivity.this, ""+position, Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(MainActivity.this,SecondActivity.class));
             }
         });
