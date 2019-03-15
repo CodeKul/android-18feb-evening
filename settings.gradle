@@ -1,1 +1,1 @@
-include ':app', ':layouts', ':kotlindemo', ':listview', ':listinkotlin', ':simplevalueresorces', ':activitylifecycle', ':recyclerviewdemo', ':notifications'
+include ':app', ':layouts', ':kotlindemo', ':listview', ':listinkotlin', ':simplevalueresorces', ':activitylifecycle', ':recyclerviewdemo', ':notifications', ':menudemo'
